@@ -1,0 +1,13 @@
+
+@import url('http://fonts.googleapis.com/css?family=Oxygen:400,700');
+@import 'divider';
+
+$font-stack:      "Oxygen", sans-serif, sans-serif;
+$primary-color:   #333;
+$brand-primary:   #e7298a;
+$brand-secondary: #999;
+
+body {
+  font: 13px $font-stack;
+  color: $primary-color;
+}

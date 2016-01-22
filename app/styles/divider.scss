@@ -1,0 +1,33 @@
+
+.a-divider {
+  background-repeat: no-repeat;
+  background-position: 50% -23px;
+    height: auto;  
+    margin: 0 auto; 
+    width: 100%; 
+    position: relative; 
+    padding: 100px 0;  
+}
+
+/* 
+  https://stocksnap.io/photo/VS5KJKKI33
+  CC0 License 
+*/
+#divider {
+  background: url(../images/bg-coffee.jpg) 50% 0 fixed; 
+}
+
+/* 
+  https://stocksnap.io/photo/DB7F22291B
+  CC0 License 
+*/
+#jobs {
+  background: url(../images/bg-notepad.jpg) 50% 0 fixed; 
+}
+
+@media screen and (max-device-width: 1024px){
+  .a-divider {
+    background-position: 50% -240px;
+    background-attachment: scroll !important;
+  }
+}
