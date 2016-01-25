@@ -1,40 +1,66 @@
 <div class="container">
+
+  <!-- Breadcrumbs -->
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">Vacatures</li>
+      </ul>
+    </div>
+    <div class="col-xs-12">
+      <h3>Vacatures</h3>
+      <hr>
+    </div>
+  </div>
+
+  <!-- Filter form -->
+  <div class="row row-content">
+    <div class="col-xs-12">
+      <p>Een overzicht van actuele vacatures.</p>
+      <form class="form-horizontal" name="filterForm" ng-submit="filterJobs()" novalidate>
+        <div class="form-group">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <div class="input-group-addon"><i class="fa fa-search"></i></div>
+              <input type="text" class="form-control" id="filterText" name="filterText" placeholder="Filter"
+                ng-model="filter.filterText" required>
+            </div>
+          </div>
+        </div>
+      </form>
+      <hr>
+    </div>
+  </div>
+
+  <!-- Job list -->
   <div class="row row-content" ng-controller="JobsCtrl">
-    <div class="col-xs-12" ng-if="!showMenu">
+    <div class="col-xs-12" ng-if="!showJobs">
       <h3>{{message}}</h3>
     </div>
-    <div class="col-xs-12" ng-if="showMenu">
-      <div class="row row-content">
-        <div class="col-xs-12">
-          <p>search box goes here</p>
-        </div>
-      </div>
-      <div class="row row-content">
-        <div class="col-xs-12">
-        <ul class="media-list tab-pane fade in active">
-          <li class="media" ng-repeat="job in jobs | filter:filtText">
-            <div class="media-left">
-              <a href={{job.link}}>
-                <img class="media-object" ng-src={{job.image}} alt={{job.title}} style="width: 160px;">
-              </a>
-            </div>
-            <div class="media-body">
-              <h2 class="media-heading">{{job.title}}
-              <span class="label label-danger" ng-show="showLabel(job)">Nieuw</span>
+    <div class="col-xs-12" ng-if="showJobs">
+      <ul class="media-list">
+        <li class="media" ng-repeat="job in jobs | filter:filtText">
+          <div class="media-left">
+            <a href={{job.link}}>
+              <img class="media-object" ng-src={{job.image}} alt={{job.title}} style="width: 160px;">
+            </a>
+          </div>
+          <div class="media-body">
+            <h2 class="media-heading">{{job.title}}
+              <small><span class="label label-danger" ng-show="showLabel(job)"><i class="fa fa-star"></i></span></small>
               <span class="badge" ng-show={{job.archived}}>Gesloten</span>
-<!--               <span class="badge">{{dish.price | currency}}</span> --></h2>
-              <p>{{job.company}}</p>
-              <p>{{job.description}}
-                <span ng-show={{!job.archived}}>
-                <a href={{job.link}}>Lees verder...</a></span>
-              </p>
-              <p>{{job.date}}</p>
-            </div>
-          </li>
-        </ul>
-        </div>
-      </div>
+              <br>
+              <small>{{job.company}}</small>
+            </h2>
+            <p>{{job.description}}
+            </p>
+              <a href={{job.link}} target="_blank"><span class="badge" ng-show={{!job.archived}}>
+                Meer <i class="fa fa-long-arrow-right"></i></span></a>
+            <p>{{job.date}}</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-

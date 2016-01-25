@@ -9,15 +9,10 @@
  */
 angular.module('cornetrecruitmentgithubioApp')
   .controller('JobsCtrl', ['$scope', 'jobService', function ($scope, jobService) {
-/*    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];*/
-    $scope.showMenu = false;
+    $scope.showJobs = false;
     $scope.message = 'Loading ...';
     $scope.jobs = jobService.getJobs();
-    $scope.showMenu = true;
+    $scope.showJobs = true;
 
     $scope.showLabel = function(job) {
       return job.featured && !job.archived;
