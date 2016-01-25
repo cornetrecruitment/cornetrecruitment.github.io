@@ -3,11 +3,64 @@
 @import 'divider';
 
 $font-stack:      "Oxygen", sans-serif, sans-serif;
-$primary-color:   #333;
-$brand-primary:   #e7298a;
-$brand-secondary: #999;
+
+
+$color-primary:           #E7298A;
+$color-primary-light:     #FC9ACC;
+$color-primary-lighter:   #F4BED9;
+$color-primary-dark:      #D4006C;
+$color-primary-darker:    #70043B;
+
+$color-secondary:         #333333;
+$color-secondary-light:   #999999;
+$color-secondary-lighter: #E7E7E7;
+$white:                   #FFFFFF;
 
 body {
   font: 13px $font-stack;
-  color: $primary-color;
+  color: $color-secondary;
+}
+
+.row {
+  padding: 30px 0px;
+}
+
+section.call-2-action {
+  background-color: $color-secondary-lighter;
+  color: $color-primary;  
+}
+
+
+footer {
+  background-color: $color-primary;
+  color: $color-primary-lighter;
+  line-height: 20px;
+  border-bottom: 5px solid $color-primary-lighter; 
+  border-top: 2px solid $color-primary-lighter; 
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: $color-primary-light;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-primary-lighter;
+  }
+
+  a:hover {
+/*    text-decoration: none;*/
+    color: $white;    
+  }
+
+  .fa {
+    padding-right: 10px;
+  }
+
+  hr {
+    border-color: $color-primary-light;
+  }
 }
