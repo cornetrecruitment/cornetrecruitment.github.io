@@ -12,7 +12,7 @@
   </div>
 </section>
 
-<footer class="row-footer">
+<footer class="row-footer" ng-controller="FooterCtrl">
   <div class="container">
     <div class="row">
       <div class="col-xs-6 col-sm-2">
@@ -27,9 +27,15 @@
       </div>
       <div class="col-xs-6 col-sm-4">
         <h5>Vacatures</h5>
-        <ul class="list-unstyled">
-          <li><a ui-sref="app">Business Analist</a></li>
-          <li><a ui-sref="app.aboutus">Project Engineer</a></li>
+        <ul class="list-unstyled" ng-if="!showJobs">
+          <li>{{message}}</li>
+        </ul>
+        <ul class="list-unstyled" ng-if="showJobs">
+          <li ng-repeat="job in jobs | filter:{archived:false} | orderBy:'-date' | limitTo:4">
+            <a href={{job.link}}>
+              {{job.title}} <small>- {{job.company}}</small>
+            </a>
+          </li>
         </ul> 
       </div>
       <div class="col-xs-6 col-sm-4">

@@ -11,7 +11,6 @@
 angular
   .module('cornetrecruitmentgithubioApp', [
     'ngResource',
-/*    'ngRoute'*/
     'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
@@ -29,7 +28,8 @@ angular
             controller: 'MainCtrl'
           },
           'footer': {
-            templateUrl: '/views/footer.html'
+            templateUrl: '/views/footer.html',
+            controller: 'FooterCtrl'
           }
         }
       })
@@ -73,31 +73,4 @@ angular
           }
         }
       });
-
-            /*
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/jobs', {
-        templateUrl: 'views/jobs.html',
-        controller: 'JobsCtrl'
-      })
-      .when('/services', {
-        templateUrl: 'views/services.html',
-        controller: 'ServicesCtrl'
-      })
-      .when('/contact', {
-        templateUrl: 'views/contact.html',
-        controller: 'ContactCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-*/
   });
