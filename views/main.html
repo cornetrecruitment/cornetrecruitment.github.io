@@ -1,0 +1,39 @@
+<div class="container"> <!-- Breadcrumbs --> <div class="row"> <div class="col-xs-12"> <h3>Contact</h3> <hr> </div> </div> <div class="row row-content"> <div class="col-xs-12"> <h3>Referenties</h3> <hr> </div> </div> <div class="row row-content" ng-controller="MainCtrl"> <div class="col-xs-12"> <h3>Testimonials</h3> <hr> </div> <div class="col-xs-12" ng-if="!showTestimonials"> <h3>{{message}}</h3> </div> <div class="col-xs-12" ng-if="showTestimonials"> <!-- Job list --> <!--       <ul class="media-list">
+        <li class="media" ng-repeat="testimonial in testimonials">
+          <div class="media-left">
+            <a href={{testimonial.website}}>
+              <img class="media-object" ng-src={{testimonial.image}} alt={{testimonial.company}} style="width: 160px;">
+            </a>
+          </div>
+          <div class="media-body">
+            <blockquote>
+              <p>{{testimonial.quote}}</p>
+              <footer>{{testimonial.name}} <cite title="{{company.name}}">{{testimonial.jobtitle}} bij {{testimonial.company}}</cite></footer>
+            </blockquote>
+          </div>
+        </li>
+      </ul> --> <carousel disable-ng-animate> <slide ng-repeat="testimonial in testimonials"> <img ng-src="{{testimonial.image}}" alt="{{testimonial.company}}"> <!--             <a ng-href="{{promo.url}}" ng-click="bannerClick(promo.pid)"><img ng-src="{{promo.image}}" alt="{{promo.title}}" /></a>
+ --> </slide> </carousel> <!-- Controls --> <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div> </div> </div>  <!-- 
+  <section id="portfolio" class="grey">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Referenties</h1>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <a href="http://www.leblancadvies.nl" target="_blank"><img src="images/logo-leblancadvies.90c58518.png" class="img-responsive center-block" alt="Le Blanc Advies"></a>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <a href="http://www.werkenvoornederland.nl/ict" target="_blank"><img src="images/logo-rijksoverheid.e51b1823.png" class="img-responsive center-block" alt="Rijksoverheid"></a>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <a href="http://www.cmotions.nl" target="_blank"><img src="images/logo-cmotions.d82a398d.png" class="img-responsive center-block" alt="Cmotions"></a>
+        </div>
+      </div>
+
+   
+
+    </div>
+  </section>
+</div>
+ -->
